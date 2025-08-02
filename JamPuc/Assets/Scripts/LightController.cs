@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
+
     [Header("Movement")]
     private Vector3 m_currentPosition;
     [SerializeField] private float m_moveSpeed;
@@ -11,6 +12,22 @@ public class LightController : MonoBehaviour
     [SerializeField] private float m_maxLightScale;
     [SerializeField] private float m_minLightScale;
     [SerializeField] private float m_scaleSpeed;
+
+    public enum Control
+    {
+        None,
+        Mouse,
+        Actor,
+    }
+
+    [Header("Actor Interaction")]
+    [SerializeField] private float m_actorConnectDistance = 2f;
+    [SerializeField] private float m_actorDisconnectDistance = 2f;
+    private Control m_currentControl = Control.Mouse;
+    private bool m_canChangeState = true;
+
+    private Actor m_selectedActor;
+    private float m_currentActorDistance;
 
     #region Properties
 
@@ -56,13 +73,23 @@ public class LightController : MonoBehaviour
 
     private void Start()
     {
-        m_lightScale = (m_maxLightScale + m_minLightScale) / 2f;
+        transform.localScale = Vector3.one * m_lightScale;
     }
 
     private void Update()
     {
         MoveToPosition();
         ScaleToSize();
+
+        switch(m_currentControl)
+        {
+            case Control.Mouse:
+                CheckConnectionFromActor();
+                break;
+            case Control.Actor:
+                CheckDisconnectionFromActor();
+                break;
+        }
     }
 
     private void OnEnable()
@@ -74,6 +101,8 @@ public class LightController : MonoBehaviour
     {
         ActionsManager.Instance.onLightSizeChange -= UpdateLightScale;
     }
+
+    #region Control
 
     private Vector3 GetMouseWorldPosition()
     {
@@ -91,7 +120,20 @@ public class LightController : MonoBehaviour
 
     private void MoveToPosition()
     {
-        m_currentPosition = GetMouseWorldPosition();
+        switch(m_currentControl)
+        {
+            case Control.Mouse:
+                m_currentPosition = GetMouseWorldPosition();
+                break;
+            case Control.Actor:
+                if (m_selectedActor != null)
+                {
+                    float lastHeight = m_currentPosition.y;
+                    m_currentPosition = m_selectedActor.transform.position;
+                    m_currentPosition.y = lastHeight;
+                }
+                break;
+        }
         transform.position = Vector3.Lerp(transform.position, m_currentPosition, Time.deltaTime * m_moveSpeed);
     }
 
@@ -115,4 +157,70 @@ public class LightController : MonoBehaviour
     {
         m_lightScale = Mathf.Lerp(m_minLightScale, m_maxLightScale, scalePercent);
     }
+
+    #endregion
+
+    #region Connection
+
+    private float CheckActorDistance()
+    {
+        if (m_selectedActor == null)
+            return 10000;
+
+        Vector3 mousePos = GetMouseWorldPosition();
+
+        Vector2 actorPosVec2 = new Vector2(m_selectedActor.transform.position.x, m_selectedActor.transform.position.z);
+        Vector2 mousePosVec2 = new Vector2(mousePos.x, mousePos.z);
+
+        return Vector2.Distance(actorPosVec2, mousePosVec2);
+    }
+
+    private void CheckDisconnectionFromActor()
+    {
+        if (m_selectedActor == null)
+            return;
+        
+        if (CheckActorDistance() >= m_actorDisconnectDistance)
+        {
+            ChangeState(Control.Mouse);
+        }
+    }
+
+    private void CheckConnectionFromActor()
+    {
+        if (m_selectedActor == null)
+            return;
+
+        if (CheckActorDistance() <= m_actorConnectDistance)
+        {
+            ChangeState(Control.Actor);
+        }
+    }
+
+    private void ChangeState(Control state)
+    {
+        if(m_canChangeState)
+            m_currentControl = state;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(m_selectedActor == null)
+            if (other.CompareTag("Player"))
+            {
+                m_selectedActor = other.GetComponent<Actor>();
+            }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (m_selectedActor != null)
+            if (other.CompareTag("Player"))
+            {
+                m_selectedActor = null;
+            }
+    }
+
+    #endregion
+
 }

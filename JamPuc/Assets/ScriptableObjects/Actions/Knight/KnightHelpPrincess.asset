@@ -16,3 +16,5 @@ MonoBehaviour:
   m_conditions:
   - m_action: {fileID: 11400000, guid: 33d84a039d6e99d418234a90b31b18f9, type: 2}
     m_needToBeCompleted: 1
+  - m_action: {fileID: 11400000, guid: ac89856a986251a45bed3541ebfed122, type: 2}
+    m_needToBeCompleted: 0
