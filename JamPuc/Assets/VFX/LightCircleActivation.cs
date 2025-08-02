@@ -1,10 +1,10 @@
 using System.Collections;
+using System.Drawing;
 using UnityEngine;
 
 public class LightCircleActivation : MonoBehaviour
 {
     [SerializeField] float circleTargetValue;
-    [SerializeField] float duration; //TODO constante de ativacao de cena
     Renderer rend;
 
     private void Start()
@@ -13,24 +13,14 @@ public class LightCircleActivation : MonoBehaviour
         rend.material.SetFloat("_CirclePosition", 0);
     }
 
-    public void StartActivation()
+    public void Activation(float t)
     {
-        StopAllCoroutines();
-        rend.material.SetFloat("_CirclePosition", 0);
-        StartCoroutine(Activation());
+        float size = Mathf.Lerp(1f, circleTargetValue, t);
+        rend.material.SetFloat("_CirclePosition", size);
     }
 
-    public IEnumerator Activation()
+    public void StopActivation()
     {
-        rend.material.SetFloat("_CirclePosition", 1);
-        float timer = 0;
-        float t;
-        while (timer < duration)
-        {
-            t = Mathf.Lerp(1f, circleTargetValue, timer/duration);
-            rend.material.SetFloat("_CirclePosition", t);
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        rend.material.SetFloat("_CirclePosition", 0f);
     }
 }
