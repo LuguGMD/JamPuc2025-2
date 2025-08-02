@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28cf7bf286ee464eb881d72c671d7e7, type: 3}
-  m_Name: PrincessAskHelp
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+  m_Name: KnightVisit
   m_EditorClassIdentifier: 
-  m_actionName: Princess Ask Help
-  m_conditions: []
-  m_timelineAsset: {fileID: 11400000, guid: ebb9b6449d37109489e16c0fdf5b2932, type: 2}
+  m_Version: 0
+  m_Tracks: []
+  m_FixedDuration: 0
+  m_EditorSettings:
+    m_Framerate: 60
+    m_ScenePreview: 1
+  m_DurationMode: 0
+  m_MarkerTrack: {fileID: 0}

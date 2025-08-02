@@ -157,16 +157,6 @@ public class LightController : MonoBehaviour
 
     private void ScaleToSize()
     {
-        //DEBUG
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            m_lightScale += Time.deltaTime * m_scaleSpeed;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            m_lightScale -= Time.deltaTime * m_scaleSpeed;
-        }
-
         m_lightScale = Mathf.Clamp(m_lightScale, m_minLightScale, m_maxLightScale);
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * m_lightScale, Time.deltaTime * m_scaleSpeed);
     }

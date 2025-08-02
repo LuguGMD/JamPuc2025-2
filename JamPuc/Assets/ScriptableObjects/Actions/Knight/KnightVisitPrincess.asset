@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f28cf7bf286ee464eb881d72c671d7e7, type: 3}
-  m_Name: KnightHelpPrincess
+  m_Name: KnightVisitPrincess
   m_EditorClassIdentifier: 
-  m_actionName: Knight Help Princess
+  m_actionName: Knigh Visit Princess
   m_conditions:
   - m_action: {fileID: 11400000, guid: 33d84a039d6e99d418234a90b31b18f9, type: 2}
     m_needToBeCompleted: 1
-  - m_action: {fileID: 11400000, guid: ac89856a986251a45bed3541ebfed122, type: 2}
-    m_needToBeCompleted: 0
-  m_timelineAsset: {fileID: 11400000, guid: 15c4024796a37b24e932d5cd6f9f4cf2, type: 2}
+  m_timelineAsset: {fileID: 11400000, guid: 4188124de05c1804f97d47eb5e8a45fa, type: 2}

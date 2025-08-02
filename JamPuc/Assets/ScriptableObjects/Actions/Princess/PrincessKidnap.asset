@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f28cf7bf286ee464eb881d72c671d7e7, type: 3}
-  m_Name: KnightDefeatDragon
+  m_Name: PrincessKidnap
   m_EditorClassIdentifier: 
-  m_actionName: Knight Defeat Dragon
+  m_actionName: PrincessKidnap
   m_conditions:
-  - m_action: {fileID: 11400000, guid: ac89856a986251a45bed3541ebfed122, type: 2}
+  - m_action: {fileID: 11400000, guid: 188e8c2276e3f3741b5afa504d6a10a4, type: 2}
     m_needToBeCompleted: 1
-  m_timelineAsset: {fileID: 11400000, guid: 8c19758edc8370243bb8ec4c1f71678b, type: 2}
+  m_timelineAsset: {fileID: 11400000, guid: 4c5534b560ce0a049bba748050a63754, type: 2}

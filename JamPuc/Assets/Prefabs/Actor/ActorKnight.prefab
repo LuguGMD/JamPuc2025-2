@@ -39,11 +39,11 @@ PrefabInstance:
     - target: {fileID: 4980205623938250118, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: 'm_actions.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: d78a72c6e002b0d45bcd877736a50056, type: 2}
+      objectReference: {fileID: 11400000, guid: f190427b413f90848927a08581477225, type: 2}
     - target: {fileID: 4980205623938250118, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: 'm_actions.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 80be9226450433e41b1fe1037b87eb60, type: 2}
+      objectReference: {fileID: 11400000, guid: 188e8c2276e3f3741b5afa504d6a10a4, type: 2}
     - target: {fileID: 6387965901583507792, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -100,5 +100,28 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7203895174488778252, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6477774833005151552, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6162496204726431570}
   m_SourcePrefab: {fileID: 100100000, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
+--- !u!1 &4876744260689187499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6477774833005151552, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
+  m_PrefabInstance: {fileID: 1893764686834374635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6162496204726431570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876744260689187499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals: []
+    m_Events: []

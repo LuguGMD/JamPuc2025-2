@@ -53,6 +53,7 @@ public class LevelHandler : MonoBehaviour
         m_actionDuration = (float)ActorManager.Instance.playableDirector.duration;
         m_maxScore = m_actionDuration * m_scorePerSecond;
 
+        m_slider.value = 0;
         m_slider.gameObject.SetActive(true);
     }
 
