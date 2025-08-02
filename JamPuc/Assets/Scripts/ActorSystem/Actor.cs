@@ -36,11 +36,13 @@ public class Actor : MonoBehaviour
     private void OnEnable()
     {
         ActionsManager.Instance.onActionStateChange += UpdateAvailableActions;
+        ActionsManager.Instance.onActorToggle?.Invoke(this, true);
     }
 
     private void OnDisable()
     {
         ActionsManager.Instance.onActionStateChange -= UpdateAvailableActions;
+        ActionsManager.Instance.onActorToggle?.Invoke(this, false);
     }
 
     private bool CheckActionDependencies(ActionScriptable action)
