@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: KnightVisitPrincess
   m_EditorClassIdentifier: 
   m_actionName: Knigh Visit Princess
-  m_conditions:
-  - m_action: {fileID: 11400000, guid: 33d84a039d6e99d418234a90b31b18f9, type: 2}
-    m_needToBeCompleted: 1
+  m_conditions: []
   m_timelineAsset: {fileID: 11400000, guid: 4188124de05c1804f97d47eb5e8a45fa, type: 2}
