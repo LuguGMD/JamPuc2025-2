@@ -71,6 +71,8 @@ public class Actor : MonoBehaviour
 
     private void UpdateAvailableActions(ActionScriptable actionChanged)
     {
+        m_doNeedLighting = false;
+
         for (int i = 0; i < actions.Count; i++)
         {
             ActionScriptable action = actions[i];
@@ -85,6 +87,11 @@ public class Actor : MonoBehaviour
                 m_availableActions.Remove(action);
             }
         }
+    }
+
+    public void NeedLight(bool doNeed)
+    {
+        m_doNeedLighting = doNeed;
     }
 
     [ContextMenu("Play Action Debug")]
