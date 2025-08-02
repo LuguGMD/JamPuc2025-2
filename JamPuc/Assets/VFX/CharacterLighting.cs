@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,17 +8,36 @@ public class CharacterLighting : MonoBehaviour
     [SerializeField] LayerMask characterLayer;
     public List<Renderer> renderers; //todo fazer os objetos entrarem na lista automaticamente
 
-    // Update is called once per frame
+    [SerializeField] private LightController lightController;
+
+    private void OnEnable()
+    {
+        ActionsManager.Instance.onActorToggle += ToggleCharacterLighting;
+    }
+
+    private void OnDisable()
+    {
+        ActionsManager.Instance.onActorToggle -= ToggleCharacterLighting;
+    }
+
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) && StageHit(ray, out hit))
+        foreach (Renderer r in renderers)
         {
-            foreach (Renderer r in renderers)
-            {
-                r.material.SetVector("_LightMaskPosition", hit.point);
-            }
+            r.material.SetVector("_LightMaskPosition", lightController.transform.position + Vector3.up * 1);
+            r.material.SetFloat("_LightMaskRadius", lightController.lightScale);
+        }
+    }
+
+    private void ToggleCharacterLighting(Actor actor, bool enabled)
+    {
+        if(enabled)
+        {
+            renderers.Add(actor.GetComponentInChildren<Renderer>(true));
+        }
+        else
+        {
+            renderers.Remove(actor.GetComponentInChildren<Renderer>(true));
         }
     }
 
