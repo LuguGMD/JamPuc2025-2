@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Iluminacao : MonoBehaviour
+public class CharacterLighting : MonoBehaviour
 {
     [SerializeField] LayerMask stageLayer;
     [SerializeField] LayerMask characterLayer;
