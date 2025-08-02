@@ -266,12 +266,19 @@ public class LightController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(m_selectedActor == null)
-            if (other.CompareTag("Player"))
+        
+        if (other.CompareTag("Player"))
+        {
+            if (m_selectedActor == null)
             {
                 Actor newActor = other.GetComponent<Actor>();
                 ChangeSelectedActor(newActor);
             }
+            else if(ActorManager.Instance.isTimelinePlaying && m_selectedActor.doNeedLighting)
+            {
+                ActionsManager.Instance.onLightActor?.Invoke(m_selectedActor, CheckActorDistance());
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)

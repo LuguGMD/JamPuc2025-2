@@ -7,6 +7,8 @@ public class Actor : MonoBehaviour
     [SerializeField] private List<ActionScriptable> m_actions = new List<ActionScriptable>();
     private List<ActionScriptable> m_availableActions = new List<ActionScriptable>();
 
+    private bool m_doNeedLighting = false;
+
     #region Properties
 
     public List<ActionScriptable> availableActions
@@ -24,6 +26,12 @@ public class Actor : MonoBehaviour
     public bool hasAction
     {
         get => m_availableActions.Count > 0;
+    }
+
+    public bool doNeedLighting
+    {
+        get => m_doNeedLighting;
+        set => m_doNeedLighting = value;
     }
 
     #endregion

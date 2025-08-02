@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour 
 {
-    private static T m_instance;
+    protected static T m_instance;
 
     #region Properties
 

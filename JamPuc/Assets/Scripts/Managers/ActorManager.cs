@@ -20,6 +20,12 @@ public class ActorManager : SingletonMono<ActorManager>
         private set => m_completedActions = value;
     }
 
+    public PlayableDirector playableDirector
+    {
+        get => m_playableDirector;
+        private set => m_playableDirector = value;
+    }
+
     public bool isTimelinePlaying
     {
         get => m_isTimelinePlaying;
@@ -61,6 +67,7 @@ public class ActorManager : SingletonMono<ActorManager>
 
     private IEnumerator HandleAction(ActionScriptable actionToPlay)
     {
+        ActionsManager.Instance.onActionStart?.Invoke();
         Debug.Log("Action Played: " + actionToPlay.actionName);
 
         if (actionToPlay.timelineAsset == null)
@@ -88,6 +95,8 @@ public class ActorManager : SingletonMono<ActorManager>
 
         yield return new WaitForSeconds(0.2f);
         m_canPlayAction = true;
+
+        ActionsManager.Instance.onActionEnd?.Invoke();
     }
 
     private void TimelineEnd(PlayableDirector director)
