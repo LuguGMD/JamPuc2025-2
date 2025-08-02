@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 [CreateAssetMenu(fileName = "ActionScriptable", menuName = "Scriptable Objects/ActionScriptable")]
 public class ActionScriptable : ScriptableObject
 {
     [SerializeField] private string m_actionName;
     [SerializeField] private List<Condition> m_conditions = new List<Condition>();
+    [SerializeField] private TimelineAsset m_timelineAsset;
 
     #region Properties
 
@@ -18,6 +20,12 @@ public class ActionScriptable : ScriptableObject
     {
         get => m_conditions;
         private set => m_conditions = value;
+    }
+
+    public TimelineAsset timelineAsset
+    {
+        get => m_timelineAsset;
+        private set => m_timelineAsset = value;
     }
 
     #endregion

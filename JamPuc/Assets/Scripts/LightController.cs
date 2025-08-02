@@ -187,7 +187,7 @@ public class LightController : MonoBehaviour
         if (m_selectedActor == null)
             return;
         
-        if (CheckActorDistance() >= m_actorDisconnectDistance)
+        if (CheckActorDistance() >= m_actorDisconnectDistance || ActorManager.Instance.isTimelinePlaying)
         {
             m_isFocused = false;
             ChangeState(Control.Mouse);
@@ -199,11 +199,12 @@ public class LightController : MonoBehaviour
         if (m_selectedActor == null)
             return;
 
-        if (CheckActorDistance() <= m_actorConnectDistance)
-        {
-            m_isFocused = true;
-            ChangeState(Control.Actor);
-        }
+        if(m_selectedActor.hasAction)
+            if (CheckActorDistance() <= m_actorConnectDistance && !ActorManager.Instance.isTimelinePlaying)
+            {
+                m_isFocused = true;
+                ChangeState(Control.Actor);
+            }
     }
 
     private void ChangeState(Control state)
@@ -220,6 +221,8 @@ public class LightController : MonoBehaviour
         if (!m_selectedActor.hasAction)
             return;
         if ((!m_isFocused))
+            return;
+        if(!ActorManager.Instance.canPlayAction)
             return;
 
         bool doSpeedUp = Input.GetMouseButton(0);

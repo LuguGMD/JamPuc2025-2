@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3345390827607430001, guid: c575a614cf29be048b07c0c3fbef3af7, type: 3}
+      propertyPath: m_text
+      value: Mentor
+      objectReference: {fileID: 0}
     - target: {fileID: 7883891691409255960, guid: c575a614cf29be048b07c0c3fbef3af7, type: 3}
       propertyPath: m_Name
       value: GameDesign
@@ -2363,7 +2367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5551337843664871857, guid: d45c1a4fa56591e4fba362b462cba8de, type: 3}
       propertyPath: m_text
-      value: Person
+      value: Diego Vieira Antunes
       objectReference: {fileID: 0}
     - target: {fileID: 8228524323103895018, guid: d45c1a4fa56591e4fba362b462cba8de, type: 3}
       propertyPath: m_Name

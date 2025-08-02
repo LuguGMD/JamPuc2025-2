@@ -18,3 +18,4 @@ MonoBehaviour:
     m_needToBeCompleted: 0
   - m_action: {fileID: 11400000, guid: 33d84a039d6e99d418234a90b31b18f9, type: 2}
     m_needToBeCompleted: 1
+  m_timelineAsset: {fileID: 11400000, guid: 9269e34caafd6fc4fa9e5d254071da3a, type: 2}

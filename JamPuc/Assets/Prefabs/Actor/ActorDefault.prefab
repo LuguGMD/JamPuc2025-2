@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7399096704615778266}
   - component: {fileID: 4980205623938250118}
   - component: {fileID: 1051184429360588244}
-  m_Layer: 0
+  - component: {fileID: 1025569524816906630}
+  m_Layer: 2
   m_Name: ActorDefault
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5c366fadaed9e45a291005cbff3cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: []
+  m_actions: []
 --- !u!65 &1051184429360588244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +69,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.512591, y: 1.4080055, z: 0.13875124}
   m_Center: {x: 0.006401837, y: 0.64621234, z: 0.013064995}
+--- !u!95 &1025569524816906630
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477774833005151552}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7203895174488778252
 GameObject:
   m_ObjectHideFlags: 0
