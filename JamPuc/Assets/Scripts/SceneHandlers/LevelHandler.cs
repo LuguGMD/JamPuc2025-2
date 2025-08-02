@@ -9,6 +9,7 @@ public class LevelHandler : MonoBehaviour
 {
 
     [SerializeField] private List<Image> m_stageImages;
+    [SerializeField] private Slider m_slider;
 
     private float m_score;
     private float m_actionScore;
@@ -23,6 +24,8 @@ public class LevelHandler : MonoBehaviour
     [Range(0f,1f)] [SerializeField] private float m_badScorePercentage;
 
     private float m_actionDuration;
+
+    
 
     private void OnEnable()
     {
@@ -49,12 +52,16 @@ public class LevelHandler : MonoBehaviour
 
         m_actionDuration = (float)ActorManager.Instance.playableDirector.duration;
         m_maxScore = m_actionDuration * m_scorePerSecond;
+
+        m_slider.gameObject.SetActive(true);
     }
 
     private void ActionEnd()
     {
         ShowImages();
         CalculateReaction();
+
+        m_slider.gameObject.SetActive(false);
     }
 
     private void CalculateReaction()
@@ -84,6 +91,10 @@ public class LevelHandler : MonoBehaviour
         if (Distance < m_scorePrecisionThreshold) multiplier = m_scorePrecisionMultiplier;
 
         m_actionScore += Time.deltaTime * m_scorePerSecond * multiplier;
+        Debug.Log("Score");
+
+        float percentage = m_actionScore / m_maxScore;
+        m_slider.value = percentage;
     }
 
     private void ShowImages()

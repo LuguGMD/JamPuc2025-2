@@ -12,6 +12,7 @@ public class ReactionHandler : MonoBehaviour
 
     private RectTransform m_rectTransform;
 
+
     private void Awake()
     {
         m_rectTransform = GetComponent<RectTransform>();
@@ -45,6 +46,8 @@ public class ReactionHandler : MonoBehaviour
                 force = (m_goodReactionForce) / 2;
                 break;
         }
+
+        Debug.Log("Reaction" + type);
 
         m_rectTransform.DOShakeAnchorPos(m_reactionDuration, force).OnComplete(() =>
         {

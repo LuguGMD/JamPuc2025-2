@@ -274,9 +274,12 @@ public class LightController : MonoBehaviour
                 Actor newActor = other.GetComponent<Actor>();
                 ChangeSelectedActor(newActor);
             }
-            else if(ActorManager.Instance.isTimelinePlaying && m_selectedActor.doNeedLighting)
+            else if(ActorManager.Instance.isTimelinePlaying)
             {
-                ActionsManager.Instance.onLightActor?.Invoke(m_selectedActor, CheckActorDistance());
+                if(!m_selectedActor.doNeedLighting)
+                    m_selectedActor = null;
+                else
+                    ActionsManager.Instance.onLightActor?.Invoke(m_selectedActor, CheckActorDistance());
             }
         }
     }
