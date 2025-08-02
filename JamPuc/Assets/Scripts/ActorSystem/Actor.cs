@@ -4,8 +4,29 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    [SerializeField] private List<ActionScriptable> actions = new List<ActionScriptable>();
+    [SerializeField] private List<ActionScriptable> m_actions = new List<ActionScriptable>();
     private List<ActionScriptable> m_availableActions = new List<ActionScriptable>();
+
+    #region Properties
+
+    public List<ActionScriptable> availableActions
+    {
+        get => m_availableActions;
+        private set => m_availableActions = value;
+    }
+
+    public List<ActionScriptable> actions
+    {
+        get => m_actions;
+        private set => m_actions = value;
+    }
+
+    public bool hasAction
+    {
+        get => m_availableActions.Count > 0;
+    }
+
+    #endregion
 
     private void Start()
     {
@@ -57,7 +78,7 @@ public class Actor : MonoBehaviour
     }
 
     [ContextMenu("Play Action Debug")]
-    public void PlayActionDebug()
+    public void PlayAction()
     {
         if(m_availableActions.Count > 0)
         {

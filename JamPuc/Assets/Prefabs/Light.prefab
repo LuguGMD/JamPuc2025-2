@@ -129,6 +129,8 @@ MonoBehaviour:
   m_scaleSpeed: 10
   m_actorConnectDistance: 1
   m_actorDisconnectDistance: 2
+  m_selectionDuration: 2
+  m_skipSelectionSpeed: 1
 --- !u!54 &5002430147394226346
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -775,7 +775,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2025791269836113754, guid: 845bec7aeba5195468945cebd044fc8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7
+      value: 4.76
       objectReference: {fileID: 0}
     - target: {fileID: 2025791269836113754, guid: 845bec7aeba5195468945cebd044fc8a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -783,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025791269836113754, guid: 845bec7aeba5195468945cebd044fc8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 2025791269836113754, guid: 845bec7aeba5195468945cebd044fc8a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -817,6 +817,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActorPrincess
       objectReference: {fileID: 0}
+    - target: {fileID: 4588868461386904838, guid: 845bec7aeba5195468945cebd044fc8a, type: 3}
+      propertyPath: m_actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588868461386904838, guid: 845bec7aeba5195468945cebd044fc8a, type: 3}
+      propertyPath: 'm_actions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 33d84a039d6e99d418234a90b31b18f9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -834,6 +842,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActorKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 6869465328629113453, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_actions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869465328629113453, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: 'm_actions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d78a72c6e002b0d45bcd877736a50056, type: 2}
+    - target: {fileID: 6869465328629113453, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: 'm_actions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 80be9226450433e41b1fe1037b87eb60, type: 2}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.514
@@ -948,6 +968,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActorDragon
       objectReference: {fileID: 0}
+    - target: {fileID: 6561567860275970742, guid: 5f0073d547684224dbc23d0127c623c6, type: 3}
+      propertyPath: m_actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561567860275970742, guid: 5f0073d547684224dbc23d0127c623c6, type: 3}
+      propertyPath: 'm_actions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ac89856a986251a45bed3541ebfed122, type: 2}
     - target: {fileID: 8700038400247361770, guid: 5f0073d547684224dbc23d0127c623c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.672

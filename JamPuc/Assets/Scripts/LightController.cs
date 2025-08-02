@@ -27,7 +27,11 @@ public class LightController : MonoBehaviour
     private bool m_canChangeState = true;
 
     private Actor m_selectedActor;
-    private float m_currentActorDistance;
+    private float m_selectionStartTime;
+    [SerializeField] private float m_selectionDuration = 0.5f;
+    [SerializeField] private float m_skipSelectionSpeed = 2f;
+
+    private bool m_isFocused = false;
 
     #region Properties
 
@@ -69,6 +73,7 @@ public class LightController : MonoBehaviour
             m_minLightScale = value;
         }
     }
+
     #endregion
 
     private void Start()
@@ -90,6 +95,8 @@ public class LightController : MonoBehaviour
                 CheckDisconnectionFromActor();
                 break;
         }
+
+        ActivateSelectionAction();
     }
 
     private void OnEnable()
@@ -182,6 +189,7 @@ public class LightController : MonoBehaviour
         
         if (CheckActorDistance() >= m_actorDisconnectDistance)
         {
+            m_isFocused = false;
             ChangeState(Control.Mouse);
         }
     }
@@ -193,6 +201,7 @@ public class LightController : MonoBehaviour
 
         if (CheckActorDistance() <= m_actorConnectDistance)
         {
+            m_isFocused = true;
             ChangeState(Control.Actor);
         }
     }
@@ -203,12 +212,49 @@ public class LightController : MonoBehaviour
             m_currentControl = state;
     }
 
+    private void ActivateSelectionAction()
+    {
+
+        if (m_selectedActor == null)
+            return;
+        if (!m_selectedActor.hasAction)
+            return;
+        if ((!m_isFocused))
+            return;
+
+        bool doSpeedUp = Input.GetMouseButton(0);
+
+        if(doSpeedUp)
+        {
+            m_selectionStartTime -= Time.deltaTime * m_skipSelectionSpeed;
+        }
+
+
+        if (Time.time - m_selectionStartTime >= m_selectionDuration)
+        {
+            m_selectedActor.PlayAction();
+            m_selectedActor = null;
+        }
+    }
+
+    private void ChangeSelectedActor(Actor actor)
+    {
+        if(actor != m_selectedActor)
+        {
+            m_isFocused = false;
+
+            m_selectedActor = actor;
+            m_selectionStartTime = Time.time;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(m_selectedActor == null)
             if (other.CompareTag("Player"))
             {
-                m_selectedActor = other.GetComponent<Actor>();
+                Actor newActor = other.GetComponent<Actor>();
+                ChangeSelectedActor(newActor);
             }
     }
 
