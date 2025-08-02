@@ -31,6 +31,8 @@ public class LightController : MonoBehaviour
     [SerializeField] private float m_selectionDuration = 0.5f;
     [SerializeField] private float m_skipSelectionSpeed = 2f;
 
+    private float m_selectionPercentage;
+
     private bool m_isFocused = false;
 
     #region Properties
@@ -71,6 +73,15 @@ public class LightController : MonoBehaviour
         private set
         {
             m_minLightScale = value;
+        }
+    }
+
+    public float selectionPercentage
+    {
+        get => m_selectionPercentage;
+        private set
+        {
+            m_selectionPercentage = value;
         }
     }
 
@@ -115,7 +126,7 @@ public class LightController : MonoBehaviour
     {
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Vector3 pos = m_currentPosition;
-        if (Physics.Raycast(mouseRay, out RaycastHit hitInfo))
+        if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, Mathf.Infinity, LayerMask.GetMask("Stage")))
         {
             float lastHeight = pos.y;
             pos = hitInfo.point;
@@ -215,6 +226,7 @@ public class LightController : MonoBehaviour
 
     private void ActivateSelectionAction()
     {
+        m_selectionPercentage = 0;
 
         if (m_selectedActor == null)
             return;
@@ -232,6 +244,8 @@ public class LightController : MonoBehaviour
             m_selectionStartTime -= Time.deltaTime * m_skipSelectionSpeed;
         }
 
+        m_selectionPercentage = (Time.time - m_selectionStartTime) / m_selectionDuration;
+        m_selectionPercentage = Mathf.Clamp01(m_selectionPercentage);
 
         if (Time.time - m_selectionStartTime >= m_selectionDuration)
         {

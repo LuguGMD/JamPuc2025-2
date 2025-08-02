@@ -8,6 +8,8 @@ public class CharacterLighting : MonoBehaviour
     [SerializeField] LayerMask characterLayer;
     public List<Renderer> renderers; //todo fazer os objetos entrarem na lista automaticamente
 
+    [SerializeField] private LightController lightController;
+
     private void OnEnable()
     {
         ActionsManager.Instance.onActorToggle += ToggleCharacterLighting;
@@ -20,14 +22,10 @@ public class CharacterLighting : MonoBehaviour
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if(StageHit(ray, out hit))
+        foreach (Renderer r in renderers)
         {
-            foreach (Renderer r in renderers)
-            {
-                r.material.SetVector("_LightMaskPosition", hit.point);
-            }
+            r.material.SetVector("_LightMaskPosition", lightController.transform.position + Vector3.up * 1);
+            r.material.SetFloat("_LightMaskRadius", lightController.lightScale);
         }
     }
 
@@ -35,11 +33,11 @@ public class CharacterLighting : MonoBehaviour
     {
         if(enabled)
         {
-            renderers.Add(actor.GetComponent<Renderer>());
+            renderers.Add(actor.GetComponentInChildren<Renderer>(true));
         }
         else
         {
-            renderers.Remove(actor.GetComponent<Renderer>());
+            renderers.Remove(actor.GetComponentInChildren<Renderer>(true));
         }
     }
 

@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdaae1a995ac8474bb6900f716b8d7de, type: 2}
+  - {fileID: -876546973899608171, guid: 0e2bb2cb39323854189859bdfe98fe82, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,7 +178,10 @@ MonoBehaviour:
   characterLayer:
     serializedVersion: 2
     m_Bits: 128
-  renderers: []
+  renderers:
+  - {fileID: 0}
+  - {fileID: 0}
+  lightController: {fileID: 5117099860884248851}
 --- !u!1001 &2191834127038407724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 2318055989063132249, guid: 07956805cdd24444e85eb9345b44b3ba, type: 3}
+      propertyPath: lightController
+      value: 
+      objectReference: {fileID: 5117099860884248851}
     - target: {fileID: 6185564893060254046, guid: 07956805cdd24444e85eb9345b44b3ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
