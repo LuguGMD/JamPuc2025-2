@@ -245,9 +245,8 @@ public class LightController : MonoBehaviour
         if(actor != m_selectedActor)
         {
             m_isFocused = false;
-
-            m_selectedActor = actor;
             m_selectionStartTime = Time.time;
+            m_selectedActor = actor;
         }
     }
 
