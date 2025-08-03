@@ -308,6 +308,6 @@ MonoBehaviour:
   m_sfxSource: {fileID: 96205795557029388}
   m_musicList: []
   m_sfxList:
-  - {fileID: 8300000, guid: 7209ae2869362e642ae9d57bc01d3ab5, type: 3}
-  - {fileID: 8300000, guid: 4738349268c7b1a4883cb7565be8aff4, type: 3}
-  - {fileID: 8300000, guid: 51bde5e15a327b948af6ab6a7a320732, type: 3}
+  - {fileID: 8300000, guid: ff9c7e94ee82cc8489f056ba1a2771b9, type: 3}
+  - {fileID: 8300000, guid: 1735d9ed9ce8d8344b99031f42fc0c79, type: 3}
+  - {fileID: 8300000, guid: 769e47b57bd31ed47b1b59cd64e4d860, type: 3}

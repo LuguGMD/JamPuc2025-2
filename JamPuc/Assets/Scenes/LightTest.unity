@@ -760,7 +760,7 @@ MonoBehaviour:
   - {fileID: 537395211}
   - {fileID: 697218490}
   m_slider: {fileID: 1179776679}
-  m_scoreNotPrecisionMultiplier: 0.5
+  m_scoreNotPrecisionMultiplier: 0.65
   m_scorePrecisionThreshold: 0.7
   m_goodScorePercentage: 0.88
   m_badScorePercentage: 0.48
@@ -1248,7 +1248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &984656595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,52 +1331,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &988843417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8087224509769359224, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
-  m_PrefabInstance: {fileID: 1521081530}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &988843418 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2989586918029043738, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
-  m_PrefabInstance: {fileID: 1521081530}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988843417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abaeaf2ed5ba4454da19c149af25f074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &988843420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988843417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 799f0319abb6aba4d95985dd8a35540e, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 988843418}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-          m_MethodName: PlaySFX
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!23 &1045068256 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8744731819040065088, guid: 1b4e5e550e00f8f488afc1ead894da2b, type: 3}
@@ -1983,7 +1937,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1256189513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,10 +2144,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8087224509769359224, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 988843420}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
 --- !u!1 &1592625176
 GameObject:
@@ -4001,31 +3952,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.87
+      value: 6.28
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.20846087
+      value: 0.222
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.51
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.4074295
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.027115064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.882414
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.23369135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4125,7 +4076,7 @@ PrefabInstance:
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c9d999a6c018dd34d8865c2dc585be1c, type: 2}
+      objectReference: {fileID: 11400000, guid: 024fd087082c4774bbe0c77c79776a09, type: 2}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 43
@@ -4313,7 +4264,7 @@ PrefabInstance:
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.data[20].value
       value: 
-      objectReference: {fileID: 988843420}
+      objectReference: {fileID: 0}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.data[21].value
       value: 
@@ -4704,6 +4655,10 @@ PrefabInstance:
     - target: {fileID: 2338455956696221410, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
       propertyPath: m_Name
       value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117099860884248851, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
+      propertyPath: m_minLightScale
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6129984004115751294, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
       propertyPath: renderers.Array.size

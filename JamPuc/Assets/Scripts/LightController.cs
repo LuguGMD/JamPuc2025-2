@@ -121,12 +121,19 @@ public class LightController : MonoBehaviour
     {
         ActionsManager.Instance.onLevelEnd += EndLevel;
         ActionsManager.Instance.onActionStart += ActionStart;
+        ActionsManager.Instance.onActionEnd += ActionEnd;
     }
 
     private void OnDisable()
     {
         ActionsManager.Instance.onLevelEnd -= EndLevel;
         ActionsManager.Instance.onActionStart -= ActionStart;
+        ActionsManager.Instance.onActionEnd -= ActionEnd;
+    }
+
+    private void ActionEnd()
+    {
+        m_selectionStartTime = Time.time;
     }
 
     private void ActionStart()
