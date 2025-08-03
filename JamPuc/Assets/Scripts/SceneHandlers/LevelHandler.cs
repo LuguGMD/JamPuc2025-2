@@ -123,7 +123,8 @@ public class LevelHandler : MonoBehaviour
     {
         foreach (Image image in m_stageImages)
         {
-            image.DOColor(Color.white, 0.5f).SetEase(Ease.OutCubic);
+            if(image != null)
+                image.DOColor(Color.white, 0.5f).SetEase(Ease.OutCubic);
         }
     }
 
@@ -131,7 +132,8 @@ public class LevelHandler : MonoBehaviour
     {
         foreach (Image image in m_stageImages)
         {
-            image.DOColor(Color.clear, 0.5f).SetEase(Ease.OutCubic);
+            if (image != null)
+                image.DOColor(Color.clear, 0.5f).SetEase(Ease.OutCubic);
         }
     }
 
