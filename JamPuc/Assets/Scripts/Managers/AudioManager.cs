@@ -37,6 +37,7 @@ public class AudioManager : SingletonMono<AudioManager>
     public void PlaySFX(int sfx)
     {
         if(sfx < m_sfxList.Count)
+        m_sfxSource.pitch = Random.Range(0.9f, 1.1f); // Randomize pitch slightly for variation
         m_sfxSource.PlayOneShot(m_sfxList[sfx]);
     }
 
@@ -56,4 +57,6 @@ public enum Music
 public enum SFX
 {
     ButtonClick,
+    StepDefault,
+    StepKnight,
 }

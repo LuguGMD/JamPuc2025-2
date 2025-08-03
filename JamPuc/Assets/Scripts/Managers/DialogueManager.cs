@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,20 +8,26 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject m_dialoguePanel;
 
     private int m_dialogueIndex = 0;
-    private string[] m_dialogues = new string[0];
+    private List<string> m_dialogues = new List<string>();
 
     private void OnEnable()
     {
-        ActionsManager.Instance.onDialogue += HandleDialogue;
+        ActionsManager.Instance.onDialogue += AddDialogue;
     }
 
     private void OnDisable()
     {
-        ActionsManager.Instance.onDialogue -= HandleDialogue;
+        ActionsManager.Instance.onDialogue -= AddDialogue;
     }
 
-    public void HandleDialogue(params string[] dialogueText)
+    public void AddDialogue(params string[] dialogueText)
     {
+        EnableDialogue();
+    }
+
+    public void AddDialogue(string dialogue)
+    {
+        m_dialogues.Add(dialogue);
         EnableDialogue();
     }
 
@@ -28,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     {
         m_dialogueIndex++;
 
-        if(m_dialogueIndex >= m_dialogues.Length)
+        if(m_dialogueIndex >= m_dialogues.Count)
         {
             DisableDialogue();
             return;
@@ -45,12 +52,12 @@ public class DialogueManager : MonoBehaviour
     private void EnableDialogue()
     {
         m_dialoguePanel.SetActive(true);
-        m_dialogueIndex = 0;
     }
 
     private void DisableDialogue()
     {
         m_dialoguePanel.SetActive(false);
+        m_dialogueIndex = 0;
     }
 
     private void Update()

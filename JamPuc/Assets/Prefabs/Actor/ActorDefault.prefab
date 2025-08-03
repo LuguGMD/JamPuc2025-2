@@ -210,6 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bc12c4ad4d8dc47a707c75bb4ec407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_stepSFX: 0
+  m_stepSFX: 1
   m_stepDistance: 1
   m_stepCooldown: 0.2

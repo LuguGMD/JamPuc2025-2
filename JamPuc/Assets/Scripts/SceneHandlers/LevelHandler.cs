@@ -46,9 +46,9 @@ public class LevelHandler : MonoBehaviour
 
     #region Score
 
-    private void ActorLighted(Actor actor, float distance)
+    private void ActorLighted(Actor actor, float distancePercentage)
     {
-        CalculatePoints(distance);
+        CalculatePoints(distancePercentage);
     }
 
     private void ActionStart()
@@ -90,10 +90,12 @@ public class LevelHandler : MonoBehaviour
         m_actionScore = 0f;
     }
 
-    private void CalculatePoints(float Distance)
+    private void CalculatePoints(float distancePercentage)
     {
         float multiplier = 1f;
-        if (!(Distance < m_scorePrecisionThreshold)) multiplier = m_scoreNotPrecisionMultiplier;
+        if (distancePercentage > m_scorePrecisionThreshold) multiplier = m_scoreNotPrecisionMultiplier;
+
+        Debug.Log(multiplier);
 
         m_actionScore += Time.deltaTime * multiplier;
 
@@ -103,10 +105,10 @@ public class LevelHandler : MonoBehaviour
 
     #endregion
 
-    private void ShakeCamera(float duration, float intensity)
+    public void ShakeCamera(float intensity)
     {
         Vector3 originalPos = m_camera.transform.position;
-        m_camera.transform.DOShakePosition(duration, intensity).OnComplete(()=>
+        m_camera.transform.DOShakePosition(0.5f, intensity).OnComplete(()=>
         {
             m_camera.transform.position = originalPos;
         });

@@ -8,6 +8,11 @@ public class StepHandler : MonoBehaviour
     private float m_lastStepTime;
     [SerializeField] private float m_stepCooldown;
 
+    private void Start()
+    {
+        m_lastStep = transform.position;
+        m_lastStepTime = Time.time;
+    }
     private void Update()
     {
         HandleStep();

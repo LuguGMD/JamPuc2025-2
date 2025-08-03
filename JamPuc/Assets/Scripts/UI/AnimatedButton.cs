@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(RectTransform))]
-public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private RectTransform m_rectTransform;
     [SerializeField] private float m_scaleFactor = 1.1f; // Scale factor for the button when hovered
@@ -30,5 +30,10 @@ public class AnimatedButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         m_rectTransform.DOKill(); // Stop any ongoing animations
         m_rectTransform.DOScale(1f, 0.2f).SetEase(Ease.InBack);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        AudioManager.Instance.PlaySFX(SFX.ButtonClick);
     }
 }

@@ -1105,6 +1105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513668764}
   - component: {fileID: 513668765}
+  - component: {fileID: 513668766}
   m_Layer: 0
   m_Name: LevelHandler
   m_TagString: Untagged
@@ -1147,9 +1148,39 @@ MonoBehaviour:
   - {fileID: 697218490}
   m_slider: {fileID: 1179776679}
   m_scoreNotPrecisionMultiplier: 0.5
-  m_scorePrecisionThreshold: 0.4
+  m_scorePrecisionThreshold: 0.7
   m_goodScorePercentage: 0.88
   m_badScorePercentage: 0.48
+--- !u!114 &513668766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513668762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: c1cae62ab1e74de41a19bacfd71bd84e, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 513668765}
+          m_TargetAssemblyTypeName: LevelHandler, Assembly-CSharp
+          m_MethodName: ShakeCamera
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &519792622 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6796502946814202196, guid: 84abbcf3910486b44a267ee864bcbd5b, type: 3}
@@ -1906,6 +1937,11 @@ MeshRenderer:
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 463668106409212134, guid: 84abbcf3910486b44a267ee864bcbd5b, type: 3}
   m_PrefabInstance: {fileID: 60319670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1118630033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4876744260689187499, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+  m_PrefabInstance: {fileID: 3005407621265494772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1118695288
 GameObject:
@@ -3154,6 +3190,52 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 499848720446453174, guid: 84abbcf3910486b44a267ee864bcbd5b, type: 3}
   m_PrefabInstance: {fileID: 60319670}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1686589549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2338455956696221410, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
+  m_PrefabInstance: {fileID: 7103960345971803550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1686589552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5117099860884248851, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
+  m_PrefabInstance: {fileID: 7103960345971803550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686589549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948ab38d28798fa46ba8d64e0bfcdd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1686589557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686589549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2fe39d940d7912e46b8d88cb098985f2, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1686589552}
+          m_TargetAssemblyTypeName: LightController, Assembly-CSharp
+          m_MethodName: UpdateLightScale
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &1689171179 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7657173390832171778, guid: 84abbcf3910486b44a267ee864bcbd5b, type: 3}
@@ -3447,7 +3529,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
   m_PrefabInstance: {fileID: 3005407621265494772}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1118630033}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
@@ -3931,6 +4013,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActorKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Events.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Signals.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: 'm_Events.m_Signals.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fe39d940d7912e46b8d88cb098985f2, type: 2}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1118630033}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162496204726431570, guid: 4cc7639138640df4d824315399df94d8, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9000126864291926065, guid: 4cc7639138640df4d824315399df94d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.28
@@ -4029,6 +4143,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b37f51e160545a479e853331861323b, type: 2}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[18].key
+      value: 
+      objectReference: {fileID: -5956710021322558906, guid: 7b37f51e160545a479e853331861323b, type: 2}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[19].key
+      value: 
+      objectReference: {fileID: -3581383477081233198, guid: 7b37f51e160545a479e853331861323b, type: 2}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
       objectReference: {fileID: 711819440577130385}
@@ -4100,6 +4230,14 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[17].value
       value: 
       objectReference: {fileID: 711819440577130385}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[18].value
+      value: 
+      objectReference: {fileID: 1686589557}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[19].value
+      value: 
+      objectReference: {fileID: 513668766}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.data[0].second
       value: 
@@ -5038,7 +5176,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2338455956696221410, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1686589557}
   m_SourcePrefab: {fileID: 100100000, guid: 214dc2c4654078149b1e6abaee0337b3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -110,16 +110,6 @@ public class LightController : MonoBehaviour
         ActivateSelectionAction();
     }
 
-    private void OnEnable()
-    {
-        ActionsManager.Instance.onLightSizeChange += UpdateLightScale;
-    }
-
-    private void OnDisable()
-    {
-        ActionsManager.Instance.onLightSizeChange -= UpdateLightScale;
-    }
-
     #region Control
 
     private Vector3 GetMouseWorldPosition()
@@ -161,7 +151,7 @@ public class LightController : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * m_lightScale, Time.deltaTime * m_scaleSpeed);
     }
 
-    private void UpdateLightScale(float scalePercent)
+    public void UpdateLightScale(float scalePercent)
     {
         m_lightScale = Mathf.Lerp(m_minLightScale, m_maxLightScale, scalePercent);
     }
@@ -269,7 +259,7 @@ public class LightController : MonoBehaviour
                 if(!m_selectedActor.doNeedLighting)
                     m_selectedActor = null;
                 else
-                    ActionsManager.Instance.onLightActor?.Invoke(m_selectedActor, CheckActorDistance());
+                    ActionsManager.Instance.onLightActor?.Invoke(m_selectedActor, CheckActorDistance()/m_lightScale);
             }
         }
     }

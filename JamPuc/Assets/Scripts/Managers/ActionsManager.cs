@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ActionsManager : Singleton<ActionsManager>
 {
-    public Action<float> onLightSizeChange;
     public Action<Actor, float> onLightActor;
 
     public Action<Actor, bool> onActorNeedLightToggle;
