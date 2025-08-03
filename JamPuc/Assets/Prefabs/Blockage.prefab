@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8744731819040065088}
   - component: {fileID: 5193158904586246263}
   m_Layer: 6
-  m_Name: Plane
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 295088a528928d24a9d100f761c0a2f4, type: 2}
+  - {fileID: 2100000, guid: ca967ebcca5768d4e8f1459be633425f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -382,7 +383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1247460237290869240
 RectTransform:
   m_ObjectHideFlags: 0

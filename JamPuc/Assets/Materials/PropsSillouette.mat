@@ -74,6 +74,6 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _LightMaskPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _SilloueteColor: {r: 0.07, g: 0.07, b: 0.07, a: 1}
+    - _SilloueteColor: {r: 0.06, g: 0.06, b: 0.06, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
