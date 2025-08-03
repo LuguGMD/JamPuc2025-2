@@ -67,9 +67,6 @@ public class ActorManager : SingletonMono<ActorManager>
 
     private IEnumerator HandleAction(ActionScriptable actionToPlay)
     {
-        ActionsManager.Instance.onActionStart?.Invoke();
-        Debug.Log("Action Played: " + actionToPlay.actionName);
-
         if (actionToPlay.timelineAsset == null)
         {
             Debug.LogWarning("Action " + actionToPlay.actionName + " has no timeline asset assigned.");
@@ -77,17 +74,13 @@ public class ActorManager : SingletonMono<ActorManager>
         }
         else
         {
-
             m_playableDirector.playableAsset = actionToPlay.timelineAsset;
             m_playableDirector.Play();
             m_isTimelinePlaying = true;
             m_canPlayAction = false;
 
+            ActionsManager.Instance.onActionStart?.Invoke();
             yield return new WaitUntil(() => !m_isTimelinePlaying);
-
-            Debug.Log("Action Ended: " + actionToPlay.actionName);
-
-            Debug.Log("-------------------------");
         }
 
         m_completedActions.Add(actionToPlay);

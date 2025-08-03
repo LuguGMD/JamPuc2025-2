@@ -34,9 +34,9 @@ public class MenuHandler : MonoBehaviour
     public void QuitGame()
     {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in the editor
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
-        Application.Quit(); // Quit the application in a build
+        Application.Quit();
 #endif
     }
 

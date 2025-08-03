@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7399096704615778266, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.514
+      value: 6.28
       objectReference: {fileID: 0}
     - target: {fileID: 7399096704615778266, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7399096704615778266, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.21
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 7399096704615778266, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: m_LocalRotation.w
@@ -123,5 +123,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Events:
-    m_Signals: []
-    m_Events: []
+    m_Signals:
+    - {fileID: 11400000, guid: 0df0d90e0bcd66a4c9b1a9cd7e777f89, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6869465328629113453}
+          m_TargetAssemblyTypeName: Actor, Assembly-CSharp
+          m_MethodName: NeedLight
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &6869465328629113453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4980205623938250118, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
+  m_PrefabInstance: {fileID: 1893764686834374635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876744260689187499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5c366fadaed9e45a291005cbff3cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

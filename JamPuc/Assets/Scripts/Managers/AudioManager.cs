@@ -36,12 +36,13 @@ public class AudioManager : SingletonMono<AudioManager>
 
     public void PlaySFX(int sfx)
     {
-        PlaySFX((SFX)sfx);
+        if(sfx < m_sfxList.Count)
+        m_sfxSource.PlayOneShot(m_sfxList[sfx]);
     }
 
     public void PlaySFX(SFX sfx)
     {
-        m_sfxSource.PlayOneShot(m_sfxList[(int)sfx]);
+        PlaySFX((int)sfx);
     }
 
 }

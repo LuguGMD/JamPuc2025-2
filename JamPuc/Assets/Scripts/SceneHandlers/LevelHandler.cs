@@ -4,26 +4,29 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using DG.Tweening;
+using Unity.Cinemachine;
 
 public class LevelHandler : MonoBehaviour
 {
 
+    [SerializeField] private CinemachineCamera m_camera;
+
+    [Header("UI")]
     [SerializeField] private List<Image> m_stageImages;
     [SerializeField] private Slider m_slider;
 
+
+    [Header("Score")]
     private float m_score;
     private float m_actionScore;
 
-    [SerializeField] private float m_scorePerSecond;
-    [SerializeField] private float m_scorePrecisionMultiplier;
+    [SerializeField] private float m_scoreNotPrecisionMultiplier;
     [SerializeField] private float m_scorePrecisionThreshold;
 
     private float m_maxScore;
 
     [Range(0f,1f)] [SerializeField] private float m_goodScorePercentage;
     [Range(0f,1f)] [SerializeField] private float m_badScorePercentage;
-
-    private float m_actionDuration;
 
     
 
@@ -41,6 +44,8 @@ public class LevelHandler : MonoBehaviour
         ActionsManager.Instance.onLightActor -= ActorLighted;
     }
 
+    #region Score
+
     private void ActorLighted(Actor actor, float distance)
     {
         CalculatePoints(distance);
@@ -50,8 +55,7 @@ public class LevelHandler : MonoBehaviour
     {
         HideImages();
 
-        m_actionDuration = (float)ActorManager.Instance.playableDirector.duration;
-        m_maxScore = m_actionDuration * m_scorePerSecond;
+        m_maxScore = (float)ActorManager.Instance.playableDirector.duration;
 
         m_slider.value = 0;
         m_slider.gameObject.SetActive(true);
@@ -74,7 +78,7 @@ public class LevelHandler : MonoBehaviour
         {
             ActionsManager.Instance.onReactionTrigger?.Invoke(ReactionType.Bad);
         }
-        else if (percentage >= m_badScorePercentage)
+        else if (percentage >= m_goodScorePercentage)
         {
             ActionsManager.Instance.onReactionTrigger?.Invoke(ReactionType.Good);
         }
@@ -89,13 +93,23 @@ public class LevelHandler : MonoBehaviour
     private void CalculatePoints(float Distance)
     {
         float multiplier = 1f;
-        if (Distance < m_scorePrecisionThreshold) multiplier = m_scorePrecisionMultiplier;
+        if (!(Distance < m_scorePrecisionThreshold)) multiplier = m_scoreNotPrecisionMultiplier;
 
-        m_actionScore += Time.deltaTime * m_scorePerSecond * multiplier;
-        Debug.Log("Score");
+        m_actionScore += Time.deltaTime * multiplier;
 
         float percentage = m_actionScore / m_maxScore;
         m_slider.value = percentage;
+    }
+
+    #endregion
+
+    private void ShakeCamera(float duration, float intensity)
+    {
+        Vector3 originalPos = m_camera.transform.position;
+        m_camera.transform.DOShakePosition(duration, intensity).OnComplete(()=>
+        {
+            m_camera.transform.position = originalPos;
+        });
     }
 
     private void ShowImages()

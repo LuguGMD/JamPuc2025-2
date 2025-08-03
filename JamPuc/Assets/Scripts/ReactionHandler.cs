@@ -47,8 +47,6 @@ public class ReactionHandler : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Reaction" + type);
-
         m_rectTransform.DOShakeAnchorPos(m_reactionDuration, force).OnComplete(() =>
         {
             m_rectTransform.anchoredPosition = m_originalPosition;

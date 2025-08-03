@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 1051184429360588244}
   - component: {fileID: 1025569524816906630}
   - component: {fileID: 683590005518799349}
+  - component: {fileID: -6263797138221106885}
   m_Layer: 7
   m_Name: ActorDefault
   m_TagString: Player
@@ -197,3 +198,18 @@ MonoBehaviour:
   m_invertX: 0
   m_invertY: 1
   m_invertZ: 0
+--- !u!114 &-6263797138221106885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477774833005151552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bc12c4ad4d8dc47a707c75bb4ec407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_stepSFX: 0
+  m_stepDistance: 1
+  m_stepCooldown: 0.2

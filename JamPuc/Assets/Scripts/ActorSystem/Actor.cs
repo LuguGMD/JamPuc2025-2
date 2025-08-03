@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Burst;
 using UnityEngine;
 
 public class Actor : MonoBehaviour
@@ -52,6 +53,8 @@ public class Actor : MonoBehaviour
         ActionsManager.Instance.onActionStateChange -= UpdateAvailableActions;
     }
 
+    #region Action
+
     private bool CheckActionDependencies(ActionScriptable action)
     {
         if (ActorManager.Instance.IsActionCompleted(action))
@@ -70,7 +73,7 @@ public class Actor : MonoBehaviour
 
     private void UpdateAvailableActions(ActionScriptable actionChanged)
     {
-        m_doNeedLighting = false;
+        NeedLight(false);
 
         for (int i = 0; i < actions.Count; i++)
         {
@@ -88,10 +91,6 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void NeedLight(bool doNeed)
-    {
-        m_doNeedLighting = doNeed;
-    }
 
     [ContextMenu("Play Action Debug")]
     public void PlayAction()
@@ -103,4 +102,14 @@ public class Actor : MonoBehaviour
         
     }
 
+    #endregion
+
+    public void NeedLight(bool doNeed)
+    {
+        if(m_doNeedLighting != doNeed)
+        {
+            ActionsManager.Instance.onActorNeedLightToggle?.Invoke(this, doNeed);
+            m_doNeedLighting = doNeed;
+        }
+    }
 }
