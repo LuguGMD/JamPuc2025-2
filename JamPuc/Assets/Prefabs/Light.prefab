@@ -478,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd895fd0e5eaa294d91df5897ed35cca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.233
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd895fd0e5eaa294d91df5897ed35cca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -519,6 +519,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd895fd0e5eaa294d91df5897ed35cca, type: 3}
       propertyPath: m_Name
       value: CylinderLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd895fd0e5eaa294d91df5897ed35cca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
