@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: ControlPlayableAsset
   m_EditorClassIdentifier: 
   sourceGameObject:
-    exposedName: fab3fe702b4cd55478dd5f830a3afec5
+    exposedName: e3663062949162c428481b7d703cc424
     defaultValue: {fileID: 0}
   prefabGameObject: {fileID: 0}
   updateParticle: 1
