@@ -272,10 +272,6 @@ PrefabInstance:
       propertyPath: VelocityModule.z.scalar
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6365729619885114346, guid: b88506202ede08944baa4018c89a6339, type: 3}
-      propertyPath: ShapeModule.m_Position.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
