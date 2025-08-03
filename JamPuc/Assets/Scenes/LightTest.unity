@@ -755,8 +755,6 @@ MonoBehaviour:
   - {fileID: 771922145}
   m_timelineAsset: {fileID: 0}
   m_stageImages:
-  - {fileID: 1592625178}
-  - {fileID: 771922146}
   - {fileID: 537395211}
   - {fileID: 697218490}
   m_slider: {fileID: 1179776679}
@@ -1248,7 +1246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &984656595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3126,14 +3124,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 8744731819040065088, guid: 1b4e5e550e00f8f488afc1ead894da2b, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8744731819040065088, guid: 1b4e5e550e00f8f488afc1ead894da2b, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: ca967ebcca5768d4e8f1459be633425f, type: 2}
     - target: {fileID: 8767643540714288767, guid: 1b4e5e550e00f8f488afc1ead894da2b, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4084,7 +4074,7 @@ PrefabInstance:
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c9d999a6c018dd34d8865c2dc585be1c, type: 2}
+      objectReference: {fileID: 11400000, guid: a72cecaa5b8d1b14a883ca23aa13b09b, type: 2}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 44
