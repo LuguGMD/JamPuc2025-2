@@ -42,7 +42,6 @@ public class MenuHandler : MonoBehaviour
 
     public void Play()
     {
-        //SceneManager.LoadScene((int)Scenes.Tutorial);
-        SceneManager.LoadScene((int)Scenes.Game);
+        SceneManager.LoadScene((int)Scenes.Tutorial);
     }
 }

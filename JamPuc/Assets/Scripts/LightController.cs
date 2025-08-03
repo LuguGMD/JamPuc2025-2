@@ -24,7 +24,7 @@ public class LightController : MonoBehaviour
     [Header("Actor Interaction")]
     [SerializeField] private float m_actorConnectDistance = 2f;
     [SerializeField] private float m_actorDisconnectDistance = 2f;
-    private Control m_currentControl = Control.Mouse;
+    [SerializeField] private Control m_currentControl = Control.Mouse;
     private bool m_canChangeState = true;
 
     private Actor m_selectedActor;
@@ -84,6 +84,12 @@ public class LightController : MonoBehaviour
         {
             m_selectionPercentage = value;
         }
+    }
+
+    public bool canChangeState
+    {
+        get => m_canChangeState;
+        set => m_canChangeState = value;
     }
 
     #endregion
@@ -209,7 +215,7 @@ public class LightController : MonoBehaviour
             }
     }
 
-    private void ChangeState(Control state)
+    public void ChangeState(Control state)
     {
         if(m_canChangeState)
             m_currentControl = state;
@@ -245,9 +251,9 @@ public class LightController : MonoBehaviour
         }
     }
 
-    private void ChangeSelectedActor(Actor actor)
+    public void ChangeSelectedActor(Actor actor, bool doOverride = false)
     {
-        if(actor != m_selectedActor)
+        if(actor != m_selectedActor || doOverride)
         {
             m_isFocused = false;
             m_selectionStartTime = Time.time;
