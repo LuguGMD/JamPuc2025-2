@@ -17,6 +17,7 @@ public class ActionsManager : Singleton<ActionsManager>
     #endregion
 
     public Action<string[]> onDialogue;
+    public Action onDialogueEnd;
 
     public Action<ReactionType> onReactionTrigger;
 

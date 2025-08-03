@@ -35,6 +35,7 @@ public class ActorManager : SingletonMono<ActorManager>
     public bool canPlayAction
     {
         get => m_canPlayAction;
+        set => m_canPlayAction = value;
     }
 
     #endregion
