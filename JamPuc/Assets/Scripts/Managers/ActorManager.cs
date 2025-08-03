@@ -90,6 +90,13 @@ public class ActorManager : SingletonMono<ActorManager>
         m_canPlayAction = true;
 
         ActionsManager.Instance.onActionEnd?.Invoke();
+        
+        if(actionToPlay is ActionFinalScriptable)
+        {
+            ActionsManager.Instance.onLevelEnd?.Invoke();
+            yield return new WaitForSeconds(2f);
+            ActionsManager.Instance.onDialogue?.Invoke(((ActionFinalScriptable)actionToPlay).finalTexts);
+        }
     }
 
     private void TimelineEnd(PlayableDirector director)

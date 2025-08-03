@@ -43,11 +43,11 @@ PrefabInstance:
     - target: {fileID: 4980205623938250118, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: 'm_actions.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: f190427b413f90848927a08581477225, type: 2}
+      objectReference: {fileID: 11400000, guid: 188e8c2276e3f3741b5afa504d6a10a4, type: 2}
     - target: {fileID: 4980205623938250118, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: 'm_actions.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 188e8c2276e3f3741b5afa504d6a10a4, type: 2}
+      objectReference: {fileID: 11400000, guid: 45a36973b2930ca4da25bf283c94898e, type: 2}
     - target: {fileID: 6387965901583507792, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 0df0d90e0bcd66a4c9b1a9cd7e777f89, type: 2}
+    - {fileID: 11400000, guid: 2fe39d940d7912e46b8d88cb098985f2, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -144,6 +145,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &6869465328629113453 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4980205623938250118, guid: 9383576eaf625b542ac3e5b28ccecd76, type: 3}

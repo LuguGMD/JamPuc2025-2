@@ -18,5 +18,7 @@ public class ActionsManager : Singleton<ActionsManager>
 
     public Action<string[]> onDialogue;
 
-    public Action<ReactionType> onReactionTrigger; 
+    public Action<ReactionType> onReactionTrigger;
+
+    public Action onLevelEnd;
 }

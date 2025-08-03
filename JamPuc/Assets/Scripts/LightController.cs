@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LightController : MonoBehaviour
@@ -108,6 +109,16 @@ public class LightController : MonoBehaviour
         }
 
         ActivateSelectionAction();
+    }
+
+    private void OnEnable()
+    {
+        ActionsManager.Instance.onLevelEnd += EndLevel;
+    }
+
+    private void OnDisable()
+    {
+        ActionsManager.Instance.onLevelEnd -= EndLevel;
     }
 
     #region Control
@@ -274,5 +285,11 @@ public class LightController : MonoBehaviour
     }
 
     #endregion
+
+    private void EndLevel()
+    {
+        m_canChangeState = true;
+        ChangeState(Control.None);
+    }
 
 }

@@ -5,21 +5,25 @@ using UnityEngine.SceneManagement;
 using System;
 using DG.Tweening;
 using Unity.Cinemachine;
+using UnityEngine.Timeline;
 
 public class LevelHandler : MonoBehaviour
 {
 
     [SerializeField] private CinemachineCamera m_camera;
+    [SerializeField] private List<Animator> m_curtainAnimators;
+
+    [SerializeField] private TimelineAsset m_timelineAsset;
 
     [Header("UI")]
     [SerializeField] private List<Image> m_stageImages;
     [SerializeField] private Slider m_slider;
 
 
-    [Header("Score")]
     private float m_score;
     private float m_actionScore;
 
+    [Header("Score")]
     [SerializeField] private float m_scoreNotPrecisionMultiplier;
     [SerializeField] private float m_scorePrecisionThreshold;
 
@@ -29,12 +33,14 @@ public class LevelHandler : MonoBehaviour
     [Range(0f,1f)] [SerializeField] private float m_badScorePercentage;
 
     
+    
 
     private void OnEnable()
     {
         ActionsManager.Instance.onActionStart += ActionStart;
         ActionsManager.Instance.onActionEnd += ActionEnd;
         ActionsManager.Instance.onLightActor += ActorLighted;
+        ActionsManager.Instance.onLevelEnd += EndLevel;
     }
 
     private void OnDisable()
@@ -42,6 +48,7 @@ public class LevelHandler : MonoBehaviour
         ActionsManager.Instance.onActionStart -= ActionStart;
         ActionsManager.Instance.onActionEnd -= ActionEnd;
         ActionsManager.Instance.onLightActor -= ActorLighted;
+        ActionsManager.Instance.onLevelEnd -= EndLevel;
     }
 
     #region Score
@@ -95,8 +102,6 @@ public class LevelHandler : MonoBehaviour
         float multiplier = 1f;
         if (distancePercentage > m_scorePrecisionThreshold) multiplier = m_scoreNotPrecisionMultiplier;
 
-        Debug.Log(multiplier);
-
         m_actionScore += Time.deltaTime * multiplier;
 
         float percentage = m_actionScore / m_maxScore;
@@ -130,6 +135,8 @@ public class LevelHandler : MonoBehaviour
         }
     }
 
+    #region Scene
+
     public void ChangeScene(Scenes scene)
     {
         ChangeScene((int)scene);
@@ -143,6 +150,21 @@ public class LevelHandler : MonoBehaviour
     public void ReloadScene()
     {
         ChangeScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    #endregion
+
+    public void EndLevel()
+    {
+        ShowImages();
+
+        foreach (Animator animator in m_curtainAnimators)
+        {
+            if (animator != null)
+            {
+                animator.SetTrigger("End");
+            }
+        }
     }
 }
 
