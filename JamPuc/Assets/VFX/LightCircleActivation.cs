@@ -18,6 +18,8 @@ public class LightCircleActivation : MonoBehaviour
     {
         circleTargetValue = lightController.selectionPercentage;
 
+        Debug.Log(circleTargetValue);
+
         if(circleTargetValue == 0)
         {
             StopActivation();

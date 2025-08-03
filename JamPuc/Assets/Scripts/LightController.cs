@@ -120,11 +120,18 @@ public class LightController : MonoBehaviour
     private void OnEnable()
     {
         ActionsManager.Instance.onLevelEnd += EndLevel;
+        ActionsManager.Instance.onActionStart += ActionStart;
     }
 
     private void OnDisable()
     {
         ActionsManager.Instance.onLevelEnd -= EndLevel;
+        ActionsManager.Instance.onActionStart -= ActionStart;
+    }
+
+    private void ActionStart()
+    {
+        ChangeState(Control.Mouse);
     }
 
     #region Control
