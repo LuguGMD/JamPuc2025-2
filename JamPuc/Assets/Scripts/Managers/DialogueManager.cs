@@ -77,6 +77,9 @@ public class DialogueManager : MonoBehaviour
         {
             SceneManager.LoadScene((int)Scenes.Game);
         }
+
+        Debug.Log("DialogueEnd");
+        ActionsManager.Instance.onDialogueEnd?.Invoke();
     }
 
     private void Update()
