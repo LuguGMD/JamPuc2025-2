@@ -17,4 +17,5 @@ MonoBehaviour:
   - m_action: {fileID: 11400000, guid: 5980f587b42fcc14086aae851c243582, type: 2}
     m_needToBeCompleted: 1
   m_timelineAsset: {fileID: 11400000, guid: 66029d51817471840bc3628c9d87bcdb, type: 2}
-  m_finalTexts: []
+  m_finalTexts:
+  - 
