@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28cf7bf286ee464eb881d72c671d7e7, type: 3}
-  m_Name: PrincessOpenGate
+  m_Script: {fileID: 11500000, guid: d843e93ddaa1b5f46a94f500f5146c22, type: 3}
+  m_Name: FinalPrincessDie
   m_EditorClassIdentifier: 
-  m_actionName: Princess Open Gate
+  m_actionName: Princess Die
   m_conditions:
-  - m_action: {fileID: 11400000, guid: 9be7f33e5a4708441b2f37fd5e31e945, type: 2}
+  - m_action: {fileID: 11400000, guid: 5980f587b42fcc14086aae851c243582, type: 2}
     m_needToBeCompleted: 1
-  m_timelineAsset: {fileID: 11400000, guid: 024fd087082c4774bbe0c77c79776a09, type: 2}
+  m_timelineAsset: {fileID: 11400000, guid: 66029d51817471840bc3628c9d87bcdb, type: 2}
+  m_finalTexts: []
