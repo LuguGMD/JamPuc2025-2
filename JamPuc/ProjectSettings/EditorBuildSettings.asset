@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LightTest.unity
     guid: e5abcc721d365f942aff513af3ac8ef0
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 3706a05868bc4124fb88d6c9c77d2888
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
