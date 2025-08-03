@@ -20,4 +20,5 @@ MonoBehaviour:
     m_needToBeCompleted: 0
   m_timelineAsset: {fileID: 11400000, guid: 4f46a1ff076d75643869e30c40d50a38, type: 2}
   m_finalTexts:
-  - 
+  - (Director) Hey, What are you doing?
+  - (Director) Don't focus the light on only one actor
