@@ -36,14 +36,30 @@ public class AudioManager : SingletonMono<AudioManager>
 
     public void PlaySFX(int sfx)
     {
-        if(sfx < m_sfxList.Count)
-        m_sfxSource.pitch = Random.Range(0.9f, 1.1f); // Randomize pitch slightly for variation
-        m_sfxSource.PlayOneShot(m_sfxList[sfx]);
+        if (sfx < m_sfxList.Count)
+        {
+            m_sfxSource.pitch = 0;
+            m_sfxSource.PlayOneShot(m_sfxList[sfx]);
+        }
     }
 
     public void PlaySFX(SFX sfx)
     {
         PlaySFX((int)sfx);
+    }
+
+    public void PlaySFXPitch(int sfx)
+    {
+        if (sfx < m_sfxList.Count)
+        {
+            m_sfxSource.pitch = Random.Range(0.9f, 1.1f); // Randomize pitch slightly for variation
+            m_sfxSource.PlayOneShot(m_sfxList[sfx]);
+        }
+    }
+
+    public void PlaySFXPitch(SFX sfx)
+    {
+        PlaySFXPitch((int)sfx);
     }
 
 }
@@ -59,4 +75,5 @@ public enum SFX
     ButtonClick,
     StepDefault,
     StepKnight,
+    Sword,
 }

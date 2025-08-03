@@ -1408,6 +1408,52 @@ Transform:
   - {fileID: 772952744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+--- !u!1 &988843417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8087224509769359224, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
+  m_PrefabInstance: {fileID: 1521081530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &988843418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2989586918029043738, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
+  m_PrefabInstance: {fileID: 1521081530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988843417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaeaf2ed5ba4454da19c149af25f074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &988843420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988843417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 799f0319abb6aba4d95985dd8a35540e, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 988843418}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &1017457025 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5912743626432099878, guid: 1b4e5e550e00f8f488afc1ead894da2b, type: 3}
@@ -2331,7 +2377,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8087224509769359224, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 988843420}
   m_SourcePrefab: {fileID: 100100000, guid: 128dcaf977eab9d42b76ec39a7f17b3b, type: 3}
 --- !u!23 &1586595372 stripped
 MeshRenderer:
@@ -3359,7 +3408,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 7b37f51e160545a479e853331861323b, type: 2}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.data[18].key
@@ -3369,6 +3418,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[19].key
       value: 
       objectReference: {fileID: -3581383477081233198, guid: 7b37f51e160545a479e853331861323b, type: 2}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[20].key
+      value: 
+      objectReference: {fileID: -4758221485865940298, guid: 7b37f51e160545a479e853331861323b, type: 2}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
@@ -3449,6 +3502,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[19].value
       value: 
       objectReference: {fileID: 513668766}
+    - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
+      propertyPath: m_SceneBindings.Array.data[20].value
+      value: 
+      objectReference: {fileID: 988843420}
     - target: {fileID: 8362597349151817334, guid: f06946be4b6915a4c80e69893e39421c, type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.data[0].second
       value: 
