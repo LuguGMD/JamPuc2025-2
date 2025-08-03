@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f28cf7bf286ee464eb881d72c671d7e7, type: 3}
-  m_Name: PrincessOpenGate
+  m_Name: KnightRejected
   m_EditorClassIdentifier: 
-  m_actionName: Princess Open Gate
+  m_actionName: Knight Rejected
   m_conditions:
   - m_action: {fileID: 11400000, guid: 9be7f33e5a4708441b2f37fd5e31e945, type: 2}
     m_needToBeCompleted: 1
-  m_timelineAsset: {fileID: 11400000, guid: 024fd087082c4774bbe0c77c79776a09, type: 2}
+  - m_action: {fileID: 11400000, guid: 33d84a039d6e99d418234a90b31b18f9, type: 2}
+    m_needToBeCompleted: 0
+  m_timelineAsset: {fileID: 11400000, guid: a72cecaa5b8d1b14a883ca23aa13b09b, type: 2}
