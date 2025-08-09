@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class TutorialHandler : MonoBehaviour
 {
@@ -18,14 +20,16 @@ public class TutorialHandler : MonoBehaviour
     [SerializeField] private LightController m_lightController;
 
     [SerializeField] private Actor m_knight;
+    [SerializeField] private RawImage fade;
 
     private bool m_isDialogueFinished = false;
 
-    [SerializeField] private List<TutorialDialogue> m_introDialogue; 
+    [SerializeField] private List<TutorialDialogue> m_introDialogue;
 
     private void Start()
     {
         StartCoroutine(Tutorial());
+        fade.DOFade(0,1.6f).SetUpdate(true);
     }
 
     private void OnEnable()
